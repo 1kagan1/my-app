@@ -165,8 +165,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-     {/* Projects Section */}
+      
+     
+{/* Projects Section */}
 <section id="projects" className="min-h-screen flex items-center justify-center px-8 py-32">
   <div className="max-w-7xl w-full">
     <div className="text-center mb-20">
@@ -183,7 +184,7 @@ export default function Home() {
           category: 'Full Stack', 
           color: 'from-orange-500 to-yellow-500', 
           url: 'https://donerciweb.vercel.app',
-          image: 'https://images.unsplash.com/photo-1585238341710-4dd0e06651e1?w=500&h=300&fit=crop'
+          image: 'https://donerciweb.vercel.app'
         },
         { title: 'Yapay Zeka SaaS', category: 'Frontend', color: 'from-purple-500 to-pink-500', url: null, image: null },
         { title: 'Mobil Bankacılık Uygulaması', category: 'UI/UX Tasarımı', color: 'from-orange-500 to-red-500', url: null, image: null },
@@ -204,10 +205,11 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="h-64 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
                   {project.image ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover"
+                    <iframe 
+                      src={project.image}
+                      title={project.title}
+                      className="w-full h-full border-0"
+                      loading="lazy"
                     />
                   ) : (
                     <div className={`w-32 h-32 bg-gradient-to-br ${project.color} rounded-full blur-2xl opacity-50`}></div>
