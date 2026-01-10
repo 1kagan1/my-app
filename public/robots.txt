@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kagan-sofoglu.com/sitemap.xml
