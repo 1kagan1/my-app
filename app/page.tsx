@@ -42,8 +42,8 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-black/50 backdrop-blur-xl z-50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
           <div className="text-2xl font-black tracking-tighter">
-            <span className="text-white">PORT</span>
-            <span className="text-blue-500">FOLIO</span>
+            <span className="text-white">KAĞAN</span>
+            <span className="text-blue-500">SOFOĞLU</span>
           </div>
           <div className="hidden md:flex gap-10 text-sm font-medium">
             <a href="#home" className="hover:text-blue-500 transition-colors duration-300">ANA SAYFA</a>
@@ -177,7 +177,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title: 'E-Ticaret Platformu', category: 'Full Stack', color: 'from-blue-500 to-cyan-500' },
+              { title: 'Dönerci Web Sitesi', category: 'Full Stack', color: 'from-orange-500 to-yellow-500' },
               { title: 'Yapay Zeka SaaS', category: 'Frontend', color: 'from-purple-500 to-pink-500' },
               { title: 'Mobil Bankacılık Uygulaması', category: 'UI/UX Tasarımı', color: 'from-orange-500 to-red-500' },
               { title: 'Kripto Tracker', category: 'Web3', color: 'from-green-500 to-emerald-500' }
