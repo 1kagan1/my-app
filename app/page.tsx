@@ -166,70 +166,66 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      {/* Projects Section */}
-<section id="projects" className="min-h-screen flex items-center justify-center px-8 py-32">
-  <div className="max-w-7xl w-full">
-    <div className="text-center mb-20">
-      <span className="text-blue-500 text-sm font-bold tracking-widest">PORTFÖY</span>
-      <h2 className="text-6xl md:text-7xl font-black mt-4 tracking-tighter">
-        Seçilmiş <span className="text-white/20">Çalışmalar</span>
-      </h2>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-8">
-      {[
-        { title: 'Dönerci Web Sitesi', category: 'Full Stack', color: 'from-orange-500 to-yellow-500', url: 'https://donerciweb.vercel.app' },
-        { title: 'Yapay Zeka SaaS', category: 'Frontend', color: 'from-purple-500 to-pink-500', url: null },
-        { title: 'Mobil Bankacılık Uygulaması', category: 'UI/UX Tasarımı', color: 'from-orange-500 to-red-500', url: null },
-        { title: 'Kripto Tracker', category: 'Web3', color: 'from-green-500 to-emerald-500', url: null }
-      ].map((project, i) => {
-        const projectCard = (
-          <div 
-            className="group relative bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500 overflow-hidden cursor-pointer hover:scale-[1.02]"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-            
-            <div className="relative z-10">
-              <div className="h-64 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                <div className={`w-32 h-32 bg-gradient-to-br ${project.color} rounded-full blur-2xl opacity-50`}></div>
-              </div>
-              
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-3xl font-black mb-2 tracking-tight">{project.title}</h3>
-                  <span className="text-blue-400 text-sm font-semibold">{project.category}</span>
-                </div>
-                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-all duration-300 group-hover:rotate-45">
-                  <span className="text-xl">↗</span>
-                </div>
-              </div>
-              
-              <p className="text-white/60 mb-6">
-                En son teknolojiler ve en iyi uygulamalar kullanılarak geliştirilmiş modern, ölçeklenebilir bir çözüm.
-              </p>
-              
-              <div className="flex gap-2 flex-wrap">
-                <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-semibold">React</span>
-                <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-semibold">Next.js</span>
-                <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-semibold">TypeScript</span>
-              </div>
-            </div>
+      <section id="projects" className="min-h-screen flex items-center justify-center px-8 py-32">
+        <div className="max-w-7xl w-full">
+          <div className="text-center mb-20">
+            <span className="text-blue-500 text-sm font-bold tracking-widest">PORTFÖY</span>
+            <h2 className="text-6xl md:text-7xl font-black mt-4 tracking-tighter">
+              Seçilmiş <span className="text-white/20">Çalışmalar</span>
+            </h2>
           </div>
-        );
 
-        return project.url ? (
-          <a key={i} href={project.url} target="_blank" rel="noopener noreferrer">
-            {projectCard}
-          </a>
-        ) : (
-          <div key={i}>
-            {projectCard}
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { title: 'Dönerci Web Sitesi', category: 'Full Stack', color: 'from-orange-500 to-yellow-500', url: 'https://donerciweb.vercel.app' },
+              { title: 'Yapay Zeka SaaS', category: 'Frontend', color: 'from-purple-500 to-pink-500', url: null },
+              { title: 'Mobil Bankacılık Uygulaması', category: 'UI/UX Tasarımı', color: 'from-orange-500 to-red-500', url: null },
+              { title: 'Kripto Tracker', category: 'Web3', color: 'from-green-500 to-emerald-500', url: null }
+            ].map((project, i) => {
+              const CardComponent = project.url ? 'a' : 'div';
+              const cardProps = project.url 
+                ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' }
+                : {};
+
+              return (
+                <CardComponent key={i} {...cardProps} className="block">
+                  <div 
+                    className="group relative bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500 overflow-hidden cursor-pointer hover:scale-[1.02]"
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                    
+                    <div className="relative z-10">
+                      <div className="h-64 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
+                        <div className={`w-32 h-32 bg-gradient-to-br ${project.color} rounded-full blur-2xl opacity-50`}></div>
+                      </div>
+                      
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-3xl font-black mb-2 tracking-tight">{project.title}</h3>
+                          <span className="text-blue-400 text-sm font-semibold">{project.category}</span>
+                        </div>
+                        <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-blue-500 transition-all duration-300 group-hover:rotate-45">
+                          <span className="text-xl">↗</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-white/60 mb-6">
+                        En son teknolojiler ve en iyi uygulamalar kullanılarak geliştirilmiş modern, ölçeklenebilir bir çözüm.
+                      </p>
+                      
+                      <div className="flex gap-2 flex-wrap">
+                        <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-semibold">React</span>
+                        <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-semibold">Next.js</span>
+                        <span className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-semibold">TypeScript</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardComponent>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="min-h-screen flex items-center justify-center px-8 py-32 relative overflow-hidden">
