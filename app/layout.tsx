@@ -7,6 +7,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <head>
+        <meta name="google-site-verification" content="7_DT7aS5MDwR-508Nm58OtxVNtN55mPCxfCt4pkKVT8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://kagan-sofoglu.com" />
