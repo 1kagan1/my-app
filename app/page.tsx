@@ -17,14 +17,14 @@ export default function Home() {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_4a2rxpa',
+        'template_rtfc87m',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'
+        'QeE6-pinNHLDu0WVk'
       );
       
       setStatus('Mesaj başarıyla gönderildi! ✓');
