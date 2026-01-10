@@ -135,15 +135,15 @@ export default function Home() {
         <div className="max-w-6xl text-center relative z-10 w-full">
           <div className="mb-6 sm:mb-8 inline-block">
             <span className="px-3 sm:px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs sm:text-sm font-semibold tracking-wide">
-              YARATICI YAZILIM GELİŞTİRİCİ
+              WEB HİZMETLERİ &amp; YAZILIM GELİŞTİRME
             </span>
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-6 sm:mb-8 tracking-tighter px-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-blue-500">
-              KAGAN
+              Kağan
             </span>
             <br />
-            <span className="text-white/20">DEVELOPER</span>
+            <span className="text-white/20"></span>
           </h1>
           <p className="text-base sm:text-xl md:text-2xl text-white/60 mb-8 sm:mb-12 max-w-3xl mx-auto font-light leading-relaxed px-4">
             Piksel-mükemmel dijital deneyimler yaratan ve son teknolojileri kullanarak 
@@ -247,7 +247,7 @@ export default function Home() {
                 url: 'https://donerciweb.vercel.app',
                 image: 'https://donerciweb.vercel.app'
               },
-              { title: 'Yapay Zeka SaaS', category: 'Frontend', color: 'from-purple-500 to-pink-500', url: null, image: null },
+              { title: 'Çiğköfteci', category: 'Frontend', color: 'from-purple-500 to-pink-500', url: null, image: 'https://cigkofteci-web.vercel.app' },
               { title: 'Mobil Bankacılık Uygulaması', category: 'UI/UX Tasarımı', color: 'from-orange-500 to-red-500', url: null, image: null },
               { title: 'Kripto Tracker', category: 'Web3', color: 'from-green-500 to-emerald-500', url: null, image: null }
             ].map((project, i) => {
@@ -391,7 +391,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 sm:py-12 text-center border-t border-white/10 px-4">
         <p className="text-white/40 text-xs sm:text-sm">
-          © 2026 <span className="font-bold">KAGAN</span>. Tüm hakları saklıdır.
+          © 2026 <span className="font-bold">Kagan</span>. Tüm hakları saklıdır.
         </p>
       </footer>
     </div>
