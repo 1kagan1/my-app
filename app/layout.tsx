@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kağan Sofuoğlu | Portfolio",
-  description: "Full‑stack geliştirici portföyü",
+  title: "Kağan Sofoğlu | Portfolio",
+  description: "Kağan Sofoğlu's personal portfolio website showcasing projects and skills.",
   icons: { icon: "/favicon.svg" },
 };
 
