@@ -219,6 +219,14 @@ export default function Home() {
                 image: '/minecraft-onizle.png',
                 features: ['Mağaza Entegrasyonu', 'Discord Giriş', 'Sunucu Durumu', 'Vote Linkleri']
               },
+              {
+                title: 'Minecraft Web Script Premium',
+                category: 'Minecraft',
+                price: '₺399',
+                image: '/minecraft-premium-onizle.png',
+                features: ['Premium Tasarım', 'Demo Linki', 'Hızlı Kurulum', 'Mobil Uyumlu'],
+                demo: 'https://mc-web-script11.vercel.app'
+              },
             ].map((theme, i) => (
               <div key={i} className="reveal block group">
                 <div className="card-3d card-shine glass-premium rounded-2xl p-2 hover:border-[#0066cc]/40 transition-all border border-white/10">
@@ -255,6 +263,16 @@ export default function Home() {
                         ))}
                       </div>
 
+                      {theme.demo ? (
+                        <a
+                          href={theme.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-corporate w-full px-6 py-3 rounded-lg font-semibold mb-2 block text-center group-hover:shadow-[0_0_20px_rgba(0,102,204,0.3)]"
+                        >
+                          Demo Görüntüle
+                        </a>
+                      ) : null}
                       <button
                         onClick={() => handlePayment(theme.title, theme.price)}
                         className="btn-corporate w-full px-6 py-3 rounded-lg font-semibold group-hover:shadow-[0_0_20px_rgba(0,102,204,0.3)]"
