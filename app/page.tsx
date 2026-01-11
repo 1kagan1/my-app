@@ -8,7 +8,7 @@ export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="max-w-6xl w-full text-center space-y-12 relative z-10">
           <div className="reveal">
             <span className="shimmer px-6 py-3 rounded-full glass-premium inline-block text-[#0066cc] text-xs font-semibold tracking-widest uppercase border border-[#0066cc]/30">
-               Web Yazılımları
+               Web
             </span>
           </div>
           
@@ -211,6 +211,13 @@ export default function Home() {
                 price: '₺899',
                 image: '/cigkofte-onizle.png',
                 features: ['Modern Tasarım', 'Ürün Katalogu', 'İletişim Formu', 'SEO Uyumlu']
+              },
+              {
+                title: 'Minecraft Sunucu Teması',
+                category: 'Minecraft',
+                price: '₺150',
+                image: '/minecraft-onizle.png',
+                features: ['Mağaza Entegrasyonu', 'Discord Giriş', 'Sunucu Durumu', 'Vote Linkleri']
               },
             ].map((theme, i) => (
               <div key={i} className="reveal block group">
