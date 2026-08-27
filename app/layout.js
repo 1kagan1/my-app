@@ -1,21 +1,21 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Kağan Sofoğlu — Developer',
-  description: 'Kağan Sofoğlu — mobil uygulamalar, web ürünleri ve yazılım projeleri geliştiren bağımsız geliştirici.',
+  title: 'Kağan Sofoğlu',
+  description: 'Kağan Sofoğlu — iOS ve web projeleri.',
   metadataBase: new URL('https://kagansofoglu.tech'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
-    title: 'Kağan Sofoğlu — Developer',
-    description: 'Mobil uygulamalar, web ürünleri ve bağımsız yazılım projeleri.',
+    title: 'Kağan Sofoğlu',
+    description: 'iOS ve web projeleri.',
     url: 'https://kagansofoglu.tech/',
   },
   twitter: {
     card: 'summary',
-    title: 'Kağan Sofoğlu — Developer',
-    description: 'Mobil uygulamalar, web ürünleri ve bağımsız yazılım projeleri.',
+    title: 'Kağan Sofoğlu',
+    description: 'iOS ve web projeleri.',
   },
 };
 
