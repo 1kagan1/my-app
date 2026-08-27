@@ -6,38 +6,38 @@ const projects = [
   {
     number: '01',
     tech: 'iOS · SwiftUI · Supabase',
-    kicker: 'Study & focus',
+    kicker: 'iOS',
     title: 'Valedict',
-    description: 'Çalışma oturumları, hedefler, gruplar ve performans takibini tek yerde toplayan iOS çalışma uygulaması.',
-    footer: 'Native iOS',
+    description: 'YKS çalışırken kendi düzenimi takip etmek için başladığım, sonradan gruplar, hedefler ve çalışma istatistikleri eklediğim iOS uygulaması.',
+    footer: 'App Store için hazırlanıyor',
     featured: true,
   },
   {
     number: '02',
     tech: 'React · TypeScript · Cloudflare',
-    kicker: 'Study tracker',
+    kicker: 'Web',
     title: 'Odak',
-    description: 'YKS çalışma sürelerini, denemeleri ve ilerlemeyi takip etmek için geliştirdiğim local-first web uygulaması.',
-    footer: 'Projeyi aç',
+    description: 'Çalışma süresi, denemeler ve ilerleme takibi için yaptığım web uygulaması. Veriler cihazda çalışıyor, hesapla birlikte senkronize de olabiliyor.',
+    footer: 'Siteyi aç',
     href: 'https://study-web.kagan0ft.workers.dev/',
   },
   {
     number: '03',
-    tech: 'Open source',
-    kicker: 'Web experiments',
-    title: 'GitHub Projects',
-    description: 'Web arayüzleri, küçük araçlar ve farklı teknoloji denemelerinden oluşan açık kaynak çalışmalarım.',
-    footer: 'Tüm repolar',
+    tech: 'GitHub',
+    kicker: 'Diğer işler',
+    title: 'GitHub',
+    description: 'Bitmiş projeler, yarım kalmış denemeler ve yeni bir şey öğrenirken açtığım repolar burada. Her şey vitrinlik değil, zaten mesele de biraz o.',
+    footer: 'Repolara bak',
     href: 'https://github.com/1kagan1?tab=repositories',
   },
 ];
 
 const stack = [
-  ['01', 'Swift / SwiftUI', 'Native iOS uygulamaları'],
-  ['02', 'Supabase / PostgreSQL', 'Auth, veri ve backend'],
-  ['03', 'TypeScript / React', 'Web ürünleri ve arayüzler'],
-  ['04', 'Cloudflare', 'Workers, D1 ve dağıtım'],
-  ['05', 'GitHub', 'Sürüm kontrolü ve teslim'],
+  ['01', 'Swift / SwiftUI', 'iOS tarafında en çok kullandığım'],
+  ['02', 'Supabase / PostgreSQL', 'Auth ve veritabanı'],
+  ['03', 'TypeScript / React', 'Web projeleri'],
+  ['04', 'Cloudflare', 'Workers, D1 ve hosting işleri'],
+  ['05', 'GitHub', 'Kod, sürüm kontrolü ve deploy'],
 ];
 
 export default function Home() {
@@ -101,43 +101,43 @@ export default function Home() {
 
         <nav id="site-nav" className={`site-nav ${menuOpen ? 'open' : ''}`} aria-label="Ana navigasyon">
           <a href="#work" onClick={closeMenu}>Projeler</a>
-          <a href="#stack" onClick={closeMenu}>Teknolojiler</a>
+          <a href="#stack" onClick={closeMenu}>Kullandıklarım</a>
           <a href="#about" onClick={closeMenu}>Hakkımda</a>
-          <a className="nav-cta" href="mailto:kagansofoglu@icloud.com" onClick={closeMenu}>İletişim</a>
+          <a className="nav-cta" href="mailto:kagansofoglu@icloud.com" onClick={closeMenu}>Mail</a>
         </nav>
       </header>
 
       <main id="top">
         <section className="hero section-shell">
           <div className="hero-copy reveal">
-            <p className="eyebrow"><span className="status-dot" /> Independent developer</p>
-            <h1>Fikirleri çalışan<br /><span>ürünlere dönüştürüyorum.</span></h1>
+            <p className="eyebrow"><span className="status-dot" /> Yazılım geliştirici</p>
+            <h1>Uygulamalar yapıyorum.<br /><span>Bazen web de.</span></h1>
             <p className="hero-lead">
-              Mobil uygulamalar ve web ürünleri geliştiriyorum. Tasarım, ürün mantığı ve altyapıyı tek bir yerde buluşturup sade, hızlı ve gerçekten kullanılabilir işler çıkarmaya odaklanıyorum.
+              Son dönemde daha çok iOS tarafıyla uğraşıyorum. SwiftUI, Supabase ve TypeScript kullanıyorum. Bu site de yaptığım şeyleri tek yerde toplamak için var.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#work">Projeleri gör</a>
+              <a className="button button-primary" href="#work">Projeler</a>
               <a className="button button-ghost" href="https://github.com/1kagan1" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
           </div>
 
           <aside className="hero-panel reveal" aria-label="Özet">
-            <div className="panel-topline"><span>Şu an</span><span className="live-pill">Building</span></div>
-            <div className="panel-focus"><p>FOCUS</p><strong>iOS & web products</strong></div>
+            <div className="panel-topline"><span>Şu sıralar</span><span className="live-pill">Kod yazıyorum</span></div>
+            <div className="panel-focus"><p>ÜZERİNDE ÇALIŞTIĞIM</p><strong>Valedict</strong></div>
             <div className="panel-grid">
-              <div><span>Mobile</span><strong>SwiftUI</strong></div>
+              <div><span>iOS</span><strong>SwiftUI</strong></div>
               <div><span>Backend</span><strong>Supabase</strong></div>
               <div><span>Web</span><strong>TypeScript</strong></div>
-              <div><span>Infra</span><strong>Cloudflare</strong></div>
+              <div><span>Hosting</span><strong>Cloudflare</strong></div>
             </div>
           </aside>
         </section>
 
         <section id="work" className="section-shell section-block">
           <div className="section-heading reveal">
-            <p className="eyebrow">Selected work</p>
-            <h2>Üzerinde çalıştığım projeler.</h2>
-            <p>Deneysel işlerden üretime yaklaşan uygulamalara kadar, son dönemde enerjimi verdiğim birkaç proje.</p>
+            <p className="eyebrow">Projeler</p>
+            <h2>Şu ana kadar yaptıklarım.</h2>
+            <p>Bazıları hâlâ geliştiriliyor, bazıları sadece bir şey denemek için başladı. En çok uğraştıklarım bunlar.</p>
           </div>
 
           <div className="project-grid">
@@ -162,8 +162,8 @@ export default function Home() {
 
         <section id="stack" className="section-shell section-block stack-section">
           <div className="section-heading compact reveal">
-            <p className="eyebrow">Stack</p>
-            <h2>Kullandığım araçlar.</h2>
+            <p className="eyebrow">Kullandıklarım</p>
+            <h2>Genelde bunlarla çalışıyorum.</h2>
           </div>
           <div className="stack-list reveal">
             {stack.map(([number, title, description]) => (
@@ -174,18 +174,18 @@ export default function Home() {
 
         <section id="about" className="section-shell section-block about-section">
           <div className="about-card reveal">
-            <p className="eyebrow">About</p>
-            <h2>Az katman, net fikir, çalışan ürün.</h2>
+            <p className="eyebrow">Hakkımda</p>
+            <h2>Bir şeyi kullanmak istiyorsam önce yapmayı deniyorum.</h2>
             <div className="about-copy">
-              <p>Bir projede yalnızca kodun çalışmasıyla ilgilenmiyorum. Arayüzün anlaşılır olması, verinin doğru akması ve ürünün gerçek bir ihtiyaca cevap vermesi benim için aynı problemin parçaları.</p>
-              <p>Yeni teknolojileri küçük deneylerle test edip işe yarayanları gerçek projelere taşıyorum. Bu site de yaptıklarımı tek yerde toplamak için var.</p>
+              <p>Yazılıma böyle başladım sayılır. İhtiyacım olan küçük bir şey oluyor, mevcut seçenekleri sevmiyorum, sonra kendim yapmaya çalışırken iş büyüyor.</p>
+              <p>Buradaki projelerin çoğu da böyle çıktı. Öğrenmek istediğim bir teknoloji varsa küçük bir demo yapmak yerine onu gerçek bir projede kullanmayı daha çok seviyorum.</p>
             </div>
           </div>
         </section>
 
         <section className="section-shell contact-section reveal">
-          <p className="eyebrow">Contact</p>
-          <h2>Bir şey inşa ediyorsan,<br />konuşabiliriz.</h2>
+          <p className="eyebrow">İletişim</p>
+          <h2>Bir şey konuşmak istersen<br />mail atabilirsin.</h2>
           <div className="contact-links">
             <a href="mailto:kagansofoglu@icloud.com">kagansofoglu@icloud.com <span>↗</span></a>
             <a href="https://github.com/1kagan1" target="_blank" rel="noreferrer">github.com/1kagan1 <span>↗</span></a>
