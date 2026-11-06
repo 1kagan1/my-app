@@ -76,6 +76,12 @@ export default function Home() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const onKey = (event) => { if (event.key === 'Escape') setMenuOpen(false); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -84,14 +90,14 @@ export default function Home() {
 
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <a className="brand" href="#top" aria-label="Ana sayfa" onClick={closeMenu}>
-          <span className="brand-mark">KS</span>
+          <span className="brand-mark">KS<span className="brand-star">✳</span></span>
           <span className="brand-name">Kağan Sofoğlu</span>
         </a>
 
         <button
           className={`nav-toggle ${menuOpen ? 'active' : ''}`}
           type="button"
-          aria-label="Menüyü aç"
+          aria-label={menuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
           aria-expanded={menuOpen}
           aria-controls="site-nav"
           onClick={() => setMenuOpen((value) => !value)}
@@ -100,6 +106,7 @@ export default function Home() {
         </button>
 
         <nav id="site-nav" className={`site-nav ${menuOpen ? 'open' : ''}`} aria-label="Ana navigasyon">
+          <a href="#hal" onClick={closeMenu}>HÂL Belgesel</a>
           <a href="#work" onClick={closeMenu}>Projeler</a>
           <a href="#stack" onClick={closeMenu}>Kullandıklarım</a>
           <a href="#about" onClick={closeMenu}>Hakkımda</a>
@@ -110,33 +117,44 @@ export default function Home() {
       <main id="top">
         <section className="hero section-shell">
           <div className="hero-copy reveal">
-            <p className="eyebrow"><span className="status-dot" /> Yazılım geliştirici</p>
-            <h1>Uygulamalar yapıyorum.<br /><span>Bazen web de.</span></h1>
+            <p className="eyebrow"><span className="status-dot" /> Kağan Sofoğlu / Kişisel arşiv</p>
+            <h1>Biraz kod.<br /><span>Biraz hikâye.</span></h1>
             <p className="hero-lead">
-              Son dönemde daha çok iOS tarafıyla uğraşıyorum. SwiftUI, Supabase ve TypeScript kullanıyorum. Bu site de yaptığım şeyleri tek yerde toplamak için var.
+              Bir yanda geliştirdiğim uygulamalar, diğer yanda HÂL Belgesel. Ürettiklerimi, merak ettiklerimi ve anlatmak istediklerimi burada bir araya getiriyorum.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#work">Projeler</a>
+              <a className="button button-primary" href="#hal">HÂL’i keşfet <span>↗</span></a>
               <a className="button button-ghost" href="https://github.com/1kagan1" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
           </div>
 
-          <aside className="hero-panel reveal" aria-label="Özet">
-            <div className="panel-topline"><span>Şu sıralar</span><span className="live-pill">Kod yazıyorum</span></div>
-            <div className="panel-focus"><p>ÜZERİNDE ÇALIŞTIĞIM</p><strong>Valedict</strong></div>
-            <div className="panel-grid">
-              <div><span>iOS</span><strong>SwiftUI</strong></div>
-              <div><span>Backend</span><strong>Supabase</strong></div>
-              <div><span>Web</span><strong>TypeScript</strong></div>
-              <div><span>Hosting</span><strong>Cloudflare</strong></div>
-            </div>
-          </aside>
+          <a className="hero-panel reveal" href="https://www.youtube.com/@halbelgesel1" target="_blank" rel="noreferrer" aria-label="HÂL Belgesel YouTube kanalını aç">
+            <div className="panel-topline"><span>BAĞIMSIZ BELGESEL KANALI</span><span>01 / HÂL</span></div>
+            <div className="hal-emblem" aria-hidden="true"><span className="emblem-orbit" /><span className="emblem-word">HÂL</span><span className="emblem-caption">BİR HAKİKAT YOLCULUĞU</span></div>
+            <div className="panel-bottom"><span>Görünenin ardındaki hikâyeler.</span><span className="play-icon">↗</span></div>
+          </a>
+        </section>
+
+        <section id="hal" className="section-shell section-block hal-section">
+          <div className="section-heading reveal"><p className="eyebrow">01 — HÂL Belgesel</p><h2>Her hikâye,<br /><em>bir arayış.</em></h2><p>HÂL, belgesel kanalım. Tarihin, tasavvufun ve insanın izinde bir hakikat yolculuğu.</p><a className="text-link" href="https://www.youtube.com/@halbelgesel1" target="_blank" rel="noreferrer">YouTube’da HÂL <span>↗</span></a></div>
+          <div className="film-grid">
+            {[
+              ['x_tMpAHSmUM', '17:37', 'Yüzünü Neden Gizledi?', 'Ahmed Bedevî'],
+              ['PbvjWlp-gQU', '14:13', '309 Yıllık Uykunun Sırrı', 'Ashab-ı Kehf'],
+              ['AwiurGP98zM', '17:00', 'Tahtını Bırakan Kral', 'İbrahim bin Edhem'],
+            ].map(([id, duration, title, subject], index) => (
+              <a className="film-card reveal" key={id} href={`https://www.youtube.com/watch?v=${id}`} target="_blank" rel="noreferrer">
+                <div className="film-still"><img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt={`${subject} belgeselinin kapak görseli`} loading="lazy" width="480" height="360" /><span className="film-play" aria-hidden="true">▶</span><span className="film-duration">{duration}</span></div>
+                <div className="film-meta"><span>HÂL / 0{index + 1}</span><span>Belgesel ↗</span></div><h3>{title}</h3><p>{subject}</p>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section id="work" className="section-shell section-block">
           <div className="section-heading reveal">
-            <p className="eyebrow">Projeler</p>
-            <h2>Şu ana kadar yaptıklarım.</h2>
+            <p className="eyebrow">02 — Yazılım projeleri</p>
+            <h2>Fikirden uygulamaya.</h2>
             <p>Bazıları hâlâ geliştiriliyor, bazıları sadece bir şey denemek için başladı. En çok uğraştıklarım bunlar.</p>
           </div>
 
@@ -175,20 +193,22 @@ export default function Home() {
         <section id="about" className="section-shell section-block about-section">
           <div className="about-card reveal">
             <p className="eyebrow">Hakkımda</p>
-            <h2>Bir şeyi kullanmak istiyorsam önce yapmayı deniyorum.</h2>
+            <h2>Merakla başlıyor.
+              Üreterek devam ediyor.</h2>
             <div className="about-copy">
               <p>Yazılıma böyle başladım sayılır. İhtiyacım olan küçük bir şey oluyor, mevcut seçenekleri sevmiyorum, sonra kendim yapmaya çalışırken iş büyüyor.</p>
-              <p>Buradaki projelerin çoğu da böyle çıktı. Öğrenmek istediğim bir teknoloji varsa küçük bir demo yapmak yerine onu gerçek bir projede kullanmayı daha çok seviyorum.</p>
+              <p>Yazılımda bir fikri çalışan bir ürüne dönüştürmeyi seviyorum. HÂL Belgesel’de ise aynı merak, anlatmak istediğim hikâyelere yöneliyor. İkisinin de başlangıç noktası bir soru.</p>
             </div>
           </div>
         </section>
 
         <section className="section-shell contact-section reveal">
           <p className="eyebrow">İletişim</p>
-          <h2>Bir şey konuşmak istersen<br />mail atabilirsin.</h2>
+          <h2>Yeni bir fikir,<br /><em>yeni bir hikâye.</em></h2>
           <div className="contact-links">
             <a href="mailto:kagansofoglu@icloud.com">kagansofoglu@icloud.com <span>↗</span></a>
-            <a href="https://github.com/1kagan1" target="_blank" rel="noreferrer">github.com/1kagan1 <span>↗</span></a>
+            <a href="https://github.com/1kagan1" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+            <a href="https://www.youtube.com/@halbelgesel1" target="_blank" rel="noreferrer">HÂL Belgesel <span>↗</span></a>
           </div>
         </section>
       </main>

@@ -2,25 +2,25 @@ import './globals.css';
 
 export const metadata = {
   title: 'Kağan Sofoğlu',
-  description: 'Kağan Sofoğlu — iOS ve web projeleri.',
+  description: 'Kağan Sofoğlu — yazılım projeleri ve HÂL Belgesel. Biraz kod, biraz hikâye.',
   metadataBase: new URL('https://kagansofoglu.tech'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
     title: 'Kağan Sofoğlu',
-    description: 'iOS ve web projeleri.',
+    description: 'Yazılım projeleri ve HÂL Belgesel — Bir Hakikat Yolculuğu.',
     url: 'https://kagansofoglu.tech/',
   },
   twitter: {
     card: 'summary',
     title: 'Kağan Sofoğlu',
-    description: 'iOS ve web projeleri.',
+    description: 'Yazılım projeleri ve HÂL Belgesel — Bir Hakikat Yolculuğu.',
   },
 };
 
 export const viewport = {
-  themeColor: '#0a0a0a',
+  themeColor: '#12120f',
 };
 
 export default function RootLayout({ children }) {
